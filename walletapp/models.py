@@ -4,9 +4,9 @@ class Customer(models.Model):
     first_name=models.CharField(max_length=20)
     last_name=models.CharField(max_length=20)
     address=models.TextField()
-    email=models.EmailField(max_length=254)
-    phone_number=models.CharField(max_length=13)
-    gender=models.CharField(max_length=10)
+    email=models.EmailField()
+    phone_number=models.CharField(max_length=10)
+    gender=models.CharField(max_length=2)
     age=models.PositiveSmallIntegerField()
 
 class Currency(models.Model):
@@ -20,7 +20,6 @@ class Wallet(models.Model):
     amount  = models.IntegerField()
     date_created = models.DateTimeField()
     status = models.CharField(max_length=15)
-    currency = models.ForeignKey("Currency",on_delete=models.CASCADE,related_name='Wallet_currency')
     history = models.DateTimeField()
     pin = models.IntegerField()
 
@@ -49,7 +48,6 @@ class Card(models.Model):
     security_code = models.IntegerField()
     date_of_issue = models.DateTimeField()
     wallet= models.ForeignKey("Wallet",on_delete=models.CASCADE,related_name='Card_wallet')
-    account= models.ForeignKey("Account",on_delete=models.CASCADE,related_name='Card_account')
     issuer= models.CharField(max_length=10)
 
 class ThirdParty(models.Model):
