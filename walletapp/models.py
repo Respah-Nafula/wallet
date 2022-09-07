@@ -28,7 +28,7 @@ class Account(models.Model):
     account_number = models.IntegerField()
     account_type = models.CharField(max_length=20)
     account_balance = models.IntegerField()
-    wallet = models.ForeignKey("Wallet",on_delete=models.CASCADE,related_name='Account_wallet')
+    # wallet_card = models.ForeignKey("Wallet",on_delete=models.CASCADE,related_name='Account_wallet')
 
 class Transaction(models.Model):
     message = models.CharField(max_length=100)
@@ -65,11 +65,11 @@ class Notification(models.Model):
     title = models.CharField(max_length=20)
 
 class Receipt(models.Model):
-    receipt_type= models.CharField(max_length = 20)
-    date = models.DateTimeField()
-    receipt_number= models.IntegerField()
+    receipt_types= models.CharField(max_length = 20)
+    receipt_date = models.DateTimeField()
+    receipt_num= models.IntegerField()
     amount= models.IntegerField()
-    transaction = models.ForeignKey("Transaction",on_delete=models.CASCADE,related_name='Thirdparty_transaction')
+    # transaction = models.ForeignKey("Transaction",on_delete=models.CASCADE,related_name='Thirdparty_transaction')
     receipt_file = models.FileField()
 
 class Loan(models.Model):
