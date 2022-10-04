@@ -8,6 +8,7 @@ class Customer(models.Model):
     phone_number=models.CharField(max_length=10)
     gender=models.CharField(max_length=2)
     age=models.PositiveSmallIntegerField()
+    profile_picture = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
 class Currency(models.Model):
     country= models.CharField(max_length=30)

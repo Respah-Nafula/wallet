@@ -1,0 +1,14 @@
+<table>
+    <th>
+    <td>transaction</td>
+    <td>recipient</td>
+    <td>loyalty_points</td>
+    </th>
+    {% for reward in rewards%}
+    <tr>
+        <td>{{ reward.transaction}}</td>
+        <td>{{ reward.recipient}}</td>
+        <td>{{ reward.loyalty_points}}</td>
+    </tr>
+    {%endfor%}
+</table>

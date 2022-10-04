@@ -1,0 +1,14 @@
+<table>
+    <th>
+    <td>message</td>
+    <td>wallet</td>
+    <td>transaction_description</td>
+    </th>
+    {% for transaction in transactions%}
+    <tr>
+        <td>{{transaction.message}}</td>
+        <td>{{ transaction.wallet}}</td>
+        <td>{{ transaction.transaction_description}}</td>
+    </tr>
+    {%endfor%}
+</table>
